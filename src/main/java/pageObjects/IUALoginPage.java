@@ -12,14 +12,17 @@ public class IUALoginPage extends BasePage {
     private final By wrongPasswordMessage = By.id("lform_errCtrl");
 
     public IUALoginPage(WebDriver driver) {
+
         super(driver);
     }
 
     private void setLoginFieldText(String login){
+
         sendKeysToLocator(loginField, login);
     }
 
     private void setPasswordFieldText(String password){
+
         sendKeysToLocator(passwordField, password);
     }
 
