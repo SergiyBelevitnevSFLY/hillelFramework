@@ -1,4 +1,4 @@
-package base.asserts;
+package asserts;
 
 public class User {
 

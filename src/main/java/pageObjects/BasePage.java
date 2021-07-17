@@ -46,4 +46,8 @@ public abstract class BasePage {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(getWebElement(from), getWebElement(to)).release().build().perform();
     }
+
+    public void switchToFrame(By locator){
+        driver.switchTo().frame(driver.findElement(locator));
+    }
 }

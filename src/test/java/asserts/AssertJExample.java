@@ -1,4 +1,4 @@
-package base.asserts;
+package asserts;
 
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
@@ -36,12 +36,7 @@ public class AssertJExample {
 
 //        assertThat(20).as("The int should be greater than, but not").isGreaterThan(30);
 
-        List<User> listOfUsers = Arrays.asList(
-                new User("0786", "login", 123),
-                new User("Qwerty", "login2", 345),
-                new User("Ytrewq", "lkjhgf", 456),
-                new User("0000", "HillelUser", 567)
-        );
+
 
         int[] intArray = {1, 4, 6, 8, 90};
 
@@ -68,9 +63,16 @@ public class AssertJExample {
         assertThat(throwable)
                 .hasCauseInstanceOf(NullPointerException.class)
                 .hasMessageContaining("boom123");
+    }
 
-
-
+    @Test
+    public void assertJCollectionExample(){
+        List<User> listOfUsers = Arrays.asList(
+                new User("0786", "login", 123),
+                new User("Qwerty", "login2", 345),
+                new User("Ytrewq", "lkjhgf", 456),
+                new User("0000", "HillelUser", 567)
+        );
 
     }
 }
