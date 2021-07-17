@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -37,7 +38,6 @@ public class AssertJExample {
 //        assertThat(20).as("The int should be greater than, but not").isGreaterThan(30);
 
 
-
         int[] intArray = {1, 4, 6, 8, 90};
 
         assertThat(intArray).contains(4);
@@ -51,13 +51,13 @@ public class AssertJExample {
 
         assertThat(user1)
                 .usingRecursiveComparison()
-                .ignoringFields("id","password")
+                .ignoringFields("id", "password")
                 .isEqualTo(user2);
 
     }
 
     @Test
-    public void assertJExceptions(){
+    public void assertJExceptions() {
         NullPointerException cause = new NullPointerException("boom!");
         Throwable throwable = new Throwable(cause);
         assertThat(throwable)
@@ -66,13 +66,27 @@ public class AssertJExample {
     }
 
     @Test
-    public void assertJCollectionExample(){
+    public void assertJCollectionExample() {
         List<User> listOfUsers = Arrays.asList(
                 new User("0786", "login", 123),
                 new User("Qwerty", "login2", 345),
                 new User("Ytrewq", "lkjhgf", 456),
                 new User("0000", "HillelUser", 567)
         );
+
+        assertThat(listOfUsers).anySatisfy(user -> {
+                    assertThat(user.getId()).isEqualTo(123);
+                    assertThat(user.getLogin()).isNotEmpty();
+                }
+
+        );
+        assertThat(listOfUsers).first().usingRecursiveComparison().isEqualTo(new User("0786", "login", 123));
+
+        assertThat(listOfUsers).allMatch(user -> user.getId() > 120);
+
+        assertThat(listOfUsers).extracting("id").contains(123,345);
+
+        assertThat(listOfUsers.stream().map(User::getId).filter(id -> id > 15).collect(Collectors.toList())).allMatch(id -> id > 10);
 
     }
 }
