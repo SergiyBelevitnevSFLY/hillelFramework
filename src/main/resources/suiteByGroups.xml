@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Bt Group">
+    <test name="org.hillelMaven" >
+        <groups>
+            <run>
+                <exclude name="Sanity"></exclude>
+            </run>
+        </groups>
+        <packages>
+            <package name="Lesson17"></package>
+        </packages>
+    </test>
+</suite>

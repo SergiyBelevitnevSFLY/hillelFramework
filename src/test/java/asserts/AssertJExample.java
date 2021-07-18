@@ -68,25 +68,26 @@ public class AssertJExample {
     @Test
     public void assertJCollectionExample() {
         List<User> listOfUsers = Arrays.asList(
-                new User("0786", "login", 123),
+                new User("0786", "w", 123),
                 new User("Qwerty", "login2", 345),
                 new User("Ytrewq", "lkjhgf", 456),
                 new User("0000", "HillelUser", 567)
         );
 
         assertThat(listOfUsers).allSatisfy(user -> {
-                    assertThat(user.getId()).isGreaterThan(122);
+                    assertThat(user.getId()).isGreaterThan(122); //assertj assert
                     assertThat(user.getLogin()).isNotEmpty();
                 }
 
         );
         assertThat(listOfUsers).last().usingRecursiveComparison().isEqualTo(new User("0000", "HillelUser", 567));
 
-        assertThat(listOfUsers).allMatch(user -> user.getId() > 120);
+        assertThat(listOfUsers).allMatch(user -> user.getId() > 120) // Predicate (Functional interface)
+                .allMatch(user -> user.getLogin().length() > 0);
 
         assertThat(listOfUsers).extracting("id").contains(123,345);
 
-        assertThat(listOfUsers.stream().map(User::getId).filter(id -> id > 150).collect(Collectors.toList())).allMatch(id -> id > 350);
+        assertThat(listOfUsers.stream().map(User::getId).filter(id -> id > 150).collect(Collectors.toList())).allMatch(id -> id > 344);
 
     }
 }

@@ -10,13 +10,15 @@ import org.testng.annotations.Test;
 
 public class CheckBoxes extends BaseTest {
 
-    @Test
+    @Test(groups = "TestGroup")
     private void checkBoxes(){
+
 
 
 
         getDriver().get("http://the-internet.herokuapp.com/checkboxes");
 
+        allureLog("OPENING CHECKBOXES");
         WebElement secondCheckBox = getDriver().findElement(By.xpath("//input[2]"));
         System.out.println("The check box " + secondCheckBox.isSelected());
 

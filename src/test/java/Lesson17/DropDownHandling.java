@@ -12,7 +12,7 @@ import pageObjects.BasePage;
 
 public class DropDownHandling extends BaseTest {
 
-    @Test(groups = "TestGroup")
+    @Test(groups = {"TestGroup","Sanity"})
     public void dropDownTest(){
 
         getDriver().get("http://the-internet.herokuapp.com/dropdown");

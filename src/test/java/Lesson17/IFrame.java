@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class IFrame extends BaseTest {
 
-    @Test
+    @Test(groups = {"TestGroup","Sanity"})
     public void iframe() {
 
 
