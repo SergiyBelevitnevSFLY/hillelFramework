@@ -74,19 +74,19 @@ public class AssertJExample {
                 new User("0000", "HillelUser", 567)
         );
 
-        assertThat(listOfUsers).anySatisfy(user -> {
-                    assertThat(user.getId()).isEqualTo(123);
+        assertThat(listOfUsers).allSatisfy(user -> {
+                    assertThat(user.getId()).isGreaterThan(122);
                     assertThat(user.getLogin()).isNotEmpty();
                 }
 
         );
-        assertThat(listOfUsers).first().usingRecursiveComparison().isEqualTo(new User("0786", "login", 123));
+        assertThat(listOfUsers).last().usingRecursiveComparison().isEqualTo(new User("0000", "HillelUser", 567));
 
         assertThat(listOfUsers).allMatch(user -> user.getId() > 120);
 
         assertThat(listOfUsers).extracting("id").contains(123,345);
 
-        assertThat(listOfUsers.stream().map(User::getId).filter(id -> id > 15).collect(Collectors.toList())).allMatch(id -> id > 10);
+        assertThat(listOfUsers.stream().map(User::getId).filter(id -> id > 150).collect(Collectors.toList())).allMatch(id -> id > 350);
 
     }
 }
