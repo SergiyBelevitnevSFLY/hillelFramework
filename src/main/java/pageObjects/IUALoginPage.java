@@ -18,15 +18,19 @@ public class IUALoginPage extends BasePage {
 
     private void setLoginFieldText(String login){
 
+        log("Setting login " + login);
         sendKeysToLocator(loginField, login);
     }
 
     private void setPasswordFieldText(String password){
 
+        log("Setting password " + password);
         sendKeysToLocator(passwordField, password);
     }
 
     private void clickSubmit(){
+
+        log("Clicking submit");
         clickByLocator(submit);
     }
 
@@ -41,6 +45,7 @@ public class IUALoginPage extends BasePage {
     }
 
     public void verifyWrongPasswordMessageIsPresent(){
+        log("Waiting for wrong message to be present");
         waitTextToBePresentInElement(wrongPasswordMessage, "Неверный логин или пароль");
     }
 }

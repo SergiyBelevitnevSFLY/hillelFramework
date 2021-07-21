@@ -33,7 +33,7 @@ public class BaseTest {
     }
 
     @Step("Allure log: {0}")
-    public void allureLog(String message){
+    public void log(String message){
 
         System.out.println(message);
         saveScreenshotPNG();

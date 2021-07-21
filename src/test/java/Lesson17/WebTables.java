@@ -1,11 +1,8 @@
 package Lesson17;
 
 import base.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -20,7 +17,7 @@ public class WebTables extends BaseTest {
         List<String> headerNames = tableHeaders.stream().map(webElement -> webElement.getText()).collect(Collectors.toList());
         int emailIndex = 0;
 
-        allureLog("Handling web table");
+        log("Handling web table");
         for (int i = 0; i < headerNames.size(); i++) {
             if (headerNames.get(i).equals("Email")) {
                 emailIndex = i;
