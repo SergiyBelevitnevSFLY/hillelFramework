@@ -11,7 +11,7 @@ public class LoginIUaTestWithPageObject extends BaseTest {
         getDriver().get("https://passport.i.ua/login/");
         IUALoginPage iuaLoginPage = new IUALoginPage(getDriver());
         iuaLoginPage.login("hillel.summer2021@i.ua", "Summer202!");
-        Assert.assertTrue(iuaLoginPage.isQuitButtonDisplayed());
+        Assert.assertTrue(false);
     }
 
     @Test
