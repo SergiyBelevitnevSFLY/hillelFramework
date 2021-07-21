@@ -4,8 +4,8 @@
         <classes>
 <!--            <class name="LoginIUaTest"/>-->
             <class name="LoginIUaTestWithPageObject"/>
-<!--            <class name="Lesson17.CheckBoxes"/>-->
-<!--            <class name="Lesson17.DropDownHandling"/>-->
+            <class name="Lesson17.CheckBoxes"/>
+            <class name="Lesson17.DropDownHandling"/>
         </classes>
     </test>
 </suite>
