@@ -14,6 +14,7 @@ public abstract class BasePage {
     @Step("log: {0}")
     public void log(String message){
         System.out.println(message);
+
 //        saveScreenshotPNG();
     }
 
