@@ -1,10 +1,11 @@
 import base.BaseTest;
+import base.BaseTestWithThreadLocal;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.IUALoginPage;
 import pageObjects.IUALoginPageFactory;
 
-public class LoginIUaTestWithPageObject extends BaseTest {
+public class LoginIUaTestWithPageObject extends BaseTestWithThreadLocal {
 
     @Test
     public void successfulLogin(){
