@@ -24,10 +24,12 @@ public class BaseTest {
 //        Assert.assertTrue(false);
 //    }
 
-    @Parameters("someHillelVariable")
+//    @Parameters("someHillelVariable")
     @BeforeMethod (alwaysRun = true)
-    public void driverSetup(String someHillelVariable){
-        System.out.println("Variable that we set with @parameters " + someHillelVariable);
+    public void driverSetup(
+//            String s
+    ){
+//        System.out.println("Variable that we set with @parameters " + s);
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
