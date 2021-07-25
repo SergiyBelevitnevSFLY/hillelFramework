@@ -9,9 +9,9 @@ public class LoginIUaTestWithPageObject extends BaseTest {
     @Test
     public void successfulLogin(){
         getDriver().get("https://passport.i.ua/login/");
-        System.out.println("****** " + System.getProperty("someHillelVariable"));
+        String password = System.getProperty("someHillelVariable");
         IUALoginPage iuaLoginPage = new IUALoginPage(getDriver());
-        iuaLoginPage.login("hillel.summer2021@i.ua", "Summer202!");
+        iuaLoginPage.login("hillel.summer2021@i.ua", password);
     }
 
     @Test
