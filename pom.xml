@@ -92,7 +92,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <someHillelVariable>${hillelVariable}</someHillelVariable>>
+                        <someHillelVariable>${someHillelVariable}</someHillelVariable>>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/main/resources/${suiteName}.xml</suiteXmlFile>
