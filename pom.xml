@@ -95,11 +95,15 @@
                         <someHillelVariable>${someHillelVariable}</someHillelVariable>>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/main/resources/${suiteName}.xml</suiteXmlFile>
+                        <suiteXmlFile>src/main/resources/suitePerClass.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+
+                    <parallel>methods</parallel>
+                    <threadCount>2</threadCount>
+
                 </configuration>
                 <dependencies>
                     <dependency>
