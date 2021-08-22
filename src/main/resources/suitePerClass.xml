@@ -1,6 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite With Classes">
-    <test name="org.hillelMaven" parallel="true">
+<suite name="Suite With Classes" >
+    <listeners>
+        <listener class-name="lesson30.FirstHillelListener"></listener>
+    </listeners>
+    <test name="org.hillelMaven" parallel="true" thread-count="3" >
         <classes>
 <!--            <class name="LoginIUaTest"/>-->
             <class name="LoginIUaTestWithPageObject"/>

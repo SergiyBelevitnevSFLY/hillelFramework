@@ -19,7 +19,7 @@ public class AssertExample{
         User user1 = new User("321","qwe",123);
         User user2 = user1;
 
-//        Assert.assertEquals(new User("123","qwe"), new User("321","qwe"));
+//        Assert.assertEquals(new utils.User("123","qwe"), new utils.User("321","qwe"));
         Assert.assertSame("", user2);
 
 //        Assert.assertSame(expected, actual);

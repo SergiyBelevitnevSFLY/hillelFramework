@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import static org.assertj.core.api.Assertions.*;
 import org.testng.annotations.Test;
 
 public class LoginIUaTest extends BaseTest {

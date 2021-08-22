@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.User;
 
 public class IUALoginPage extends BasePage {
 
@@ -35,14 +36,17 @@ public class IUALoginPage extends BasePage {
         return isElementDisplayed(quitButton);
     }
 
-    public void login(String login, String password){
-        setLoginFieldText(login);
-        setPasswordFieldText(password);
+    public IUALoginPage login(User user){
+        setLoginFieldText(user.getEmail());
+        setPasswordFieldText(user.getPassword());
         clickSubmit();
+
+        return this;
     }
 
-    public void verifyWrongPasswordMessageIsPresent(){
+    public FirstPageObject verifyWrongPasswordMessageIsPresent(){
         log("Waiting for wrong message to be present");
         waitTextToBePresentInElement(wrongPasswordMessage, "Неверный логин или пароль");
+        return new FirstPageObject(driver);
     }
 }
